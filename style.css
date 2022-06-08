@@ -1,0 +1,480 @@
+/* GENERAL /////////////////////////////////////////////////// */
+* {
+  box-sizing: border-box;
+}
+
+/* Fixes a Chrome rendering bug. */
+.vp:target, .ch2:target {
+  outline: 1px solid transparent;
+}
+
+.vp:target .ur, .ch2:target .ur {
+  outline: 1px solid transparent;
+}
+
+:root {
+  height: 100%;
+  -ms-overflow-style: none;
+  overflow: hidden;
+  overflow: -moz-scrollbars-none; 
+}
+
+/* Chrome and Safari */
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  /* Prevent address bar from disappearing on mobile. */
+  position: fixed;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* LAYOUT ////////////////////////////////////////////////// */
+#fixed-layer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gutter {
+  position: absolute;
+  width: calc(var(--gw) * 1px);
+  height: calc(var(--gh) * 1px);
+}
+
+.vg {
+  display: var(--vg);
+}
+
+.hg {
+  display: var(--hg);
+}
+
+.gutter-top {
+  top: 0;
+}
+
+.gutter-right {
+  right: 0;
+}
+
+.gutter-bottom {
+  bottom: 0;
+}
+
+.gutter-left {
+  left: 0;
+}
+
+.column {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  scroll-snap-align: start;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  flex: none;
+}
+
+.row {
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: start;
+  scroll-snap-type: x mandatory;
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  flex: none;
+}
+
+/* Viewport Div */
+.vp {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+  /* This allows us to use rows properly as otherwise
+  these divs will shrink down. */
+  background-color: black;
+  flex: none;
+}
+
+.ur {
+  position: relative;
+  width: calc(var(--w) * 1px);
+  height: calc(var(--h) * 1px);
+  background-color: white;
+  pointer-events: none;
+}
+
+#page-start {
+  scroll-behavior: auto;
+}
+
+.cvi2, .cvi3, .chi2, .chi3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* PORTRAIT LAYOUT /////////////////////////////////////////// */
+@media only screen and (orientation: portrait) {
+  .landscape {
+    display: none;
+  }
+
+  /* CRUNCHERS ----------------------------------------- */
+  .cv2 {
+    width: 100%;
+    height: 200%;
+  }
+  
+  .cvi2 {
+    width: 100%;
+    height: 50%;
+    scroll-snap-align: start;
+  }
+  
+  .cv3 {
+    width: 100%;
+    height: 300%;
+  }
+  
+  .cvi3 {
+    width: 100%;
+    height: 33.3333%;
+    scroll-snap-align: start;
+  }
+
+  .ch2 {
+    width: 200%;
+    height: 100%;
+  }
+
+  .chi2 {
+    width: 50%;
+    height: 100%;
+    scroll-snap-align: start;
+  }
+
+  .ch3 {
+    width: 300%;
+    height: 100%;
+  }
+
+  .chi3 {
+    width: 33.33333%;
+    height: 100%;
+    scroll-snap-align: start;
+  }
+
+  /* NAV-LAYER ------------------------------------ */
+  .nl-top, .nl-bottom {
+    height: calc(var(--wpx)/3);
+  }
+
+  .nl-top svg, .nl-bottom svg {
+    width: calc(var(--wpx)/4);
+  }
+
+  .nl-right svg, .nl-left svg {
+    height: calc(var(--wpx)/4);
+  }
+}
+
+/* LANDSCAPE LAYOUT /////////////////////////////////////// */
+@media only screen and (orientation: landscape) {
+  /* CRUNCHERS ----------------------------------------- */
+  .cv2, .cv3, .ch2, .ch3 {
+    scroll-snap-align: start;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .cvi2, .cvi3, .chi2, .chi3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .cvi2 a, .cvi3 a, .chi2 a, .chi3 a {
+    pointer-events: initial;
+  }
+
+  .portrait {
+    display: none;
+  }
+
+  /* NAV-LAYER -------------------------------------- */
+  .nl-top, .nl-bottom {
+    height: calc(var(--wpx)/10);
+  }
+
+  .nl-top svg, .nl-bottom svg {
+    width: calc(var(--wpx)/15);
+  }
+
+  .nl-right svg, .nl-left svg {
+    height: calc(var(--wpx)/15);
+  }
+}
+
+/* INTERFACE //////////////////////////////////////////////////// */
+a, button, input {
+  pointer-events: initial;
+}
+
+.inline-link {
+  display: inline;
+  text-decoration: underline;
+}
+
+/* NAV-LAYER --------------------------------------------- */
+.nav-layer-trigger {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: purple;
+}
+
+.nav-layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: hsla(0, 100%, 50%, 0.8);
+  pointer-events: none;
+  opacity: 0;
+}
+
+.nav-layer div {
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+.nav-layer span {
+  font-size: calc(var(--wpx)/30);
+}
+
+.nl-top, .nl-bottom {
+  flex-direction: column;
+  width: 100%;
+}
+
+.nl-bottom {
+  bottom: 0;
+}
+
+.nl-top svg, .nl-bottom svg {
+  height: 50%;
+}
+
+.nl-top span, .nl-bottom span {
+  display: block;
+  height: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.nl-right, .nl-left {
+  height: 100%;
+  width: 50%;
+}
+
+.nl-right {
+  right: 0;
+  justify-content: flex-end;
+}
+
+.nl-right span {
+  text-align: right;
+}
+
+/* EXPANDERS -------------------------------------------------- */
+.expander {
+  width:0;
+  height:0;
+  overflow:hidden;
+  transition: width 1s, height 1s;
+  border: 4px solid red;
+}
+
+.expander-toggle {
+  -webkit-appearance: none;
+  appearance: none;
+  /* width: 0; */
+  /* height: 0; */
+  margin: 0;
+  display: inline;
+}
+
+.expander-toggle-label {
+
+}
+
+.expander-toggle:checked ~ .expander {
+  /* height: 500px;
+  width: 500px; */
+}
+
+/* Give this component specific dimensions and position absolute
+so that it's interior content is not affected by changes in the
+expander component. Put any stylings here that you want to be
+consistent independenly of transitions. */
+.stable-content {
+  position: relative;
+  /* width: 500px;
+  height: 500px; */
+}
+
+/* FOR EXPANDER TRANSITIONS ---------------------------------- */
+/* Styles we want when expander is open. */
+.expander-toggle:checked ~ .expander .stable-content {
+
+}
+
+/* Styles we want when expander is closed. */
+.expander-toggle:not(:checked) ~ .expander .stable-content {
+
+}
+
+.open-label {
+  display: none;
+}
+
+.closed-label {
+  display: inline;
+}
+
+.expander-toggle:checked ~ .expander-toggle-label .open-label {
+  display: inline;
+}
+
+.expander-toggle:checked ~ .expander-toggle-label .closed-label {
+  display: none;
+}
+
+/* IN-PAGE NAVIGATION ---------------------------------------- */
+.in-page:focus-visible {
+
+}
+
+@media (hover: hover) {
+  .in-page:hover {
+
+  }
+}
+
+/* STYLING //////////////////////////////////////////// */
+i {
+  font-style: italic;
+  padding-right: 0.5ch;
+}
+
+/* PAGE-LOADING-SCREEN ///////////////////////////////////// */
+#page-loading-screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  font-family: sans-serif;
+  display: flex;
+  gap: 50px ;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: 1;
+}
+
+@keyframes spin {
+  0% {transform: rotateY(0deg);}
+  50% {transform: rotateY(180deg);}
+}
+
+.page-loader-graphic {
+  width: 50px;
+  height: 50px;
+  transform-origin: 50% 50%;
+  animation: spin 2s infinite;
+}
+
+img {
+  position: fixed;
+}
+
+
+
+
+
+
+/* BACKGROUND IMAGE RESIZING */
+/* Mobile first, followed by... */
+/* Tablet to HD Desktop */
+@media only screen and (min-width:601px) and (max-width: 1920px) {
+
+  @media only screen and (orientation: landscape) {
+
+  }
+}
+/* 4K */
+@media only screen and (min-width: 1921px) {
+
+}
+
+/* DESKTOP ////////////////////////////////////////////// */
+@media only screen and (orientation: landscape) {
+
+
+  .ch2, .ch3 {
+    width: 100%;
+    position: relative;
+  }
+
+  .chi2, .chi3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+  }
+
+  .cvi2 a, .cvi3 a, .chi2 a, .chi3 a {
+    pointer-events: initial;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: initial;
+  }
+}
+
+/* TABLET ////////////////////////////// */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* LAPTOP / DESKTOP //////////////////////////// */
+@media only screen and (min-width: 1025px) {
+
+}

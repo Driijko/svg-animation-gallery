@@ -1,0 +1,132 @@
+<!-- FIXED LAYER AND SCROLLING CONTAINER ///////////////// -->
+<div id="fixed-layer">
+  <div class="vg gutter gutter-top"></div>
+  <div class="hg gutter gutter-right"></div>
+  <div class="vg gutter gutter-bottom"></div>
+  <div class="hg gutter gutter-left"></div>
+  <div class="ur"></div>
+</div>
+<div id="msc">
+  
+</div>
+
+<!-- PAGE START /////////////////////////////////// -->
+<div tabindex="-1" id="page-start" class="row"   >
+  <div class="vp">
+    <a href="">Link 2</a>
+  </div>
+  <div tabindex="-1" class="column" autofocus>
+    <div class="vp">      
+      <a href="">Link 1</a>
+    </div>
+    <div class="vp">2-2</div>
+    <div class="vp">2-3</div>
+  </div>
+  <div class="vp">3</div>
+</div>
+
+<!-- RESPONSIVE IMAGES //////////////////////////// -->
+<picture>
+  <source srcset="" media="(min-width:1921px)"/>
+  <source srcset="" media="(min-width:601px) and (max-width:1920px)"/>
+  <img src="" alt="" />
+</picture>
+
+<!-- EXPANDERS //////////////////////////////////////// -->
+<div class="expander-container">
+  <input type="checkbox" id="expander-toggle-1" class="expander-toggle"/>
+  <label for="expander-toggle-1" class="expander-toggle-label">OPTIONS</label>
+  <div class="expander">
+    <div class="stable-content">
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal Expander with changing text on toggle label -->
+<div class="expander-container">
+  <input type="checkbox" id="expander-toggle-2" class="expander-toggle"/>
+  <div class="expander">
+    <div class="stable-content">
+
+    </div>
+  </div>
+  <label for="expander-toggle-2" class="expander-toggle-label">
+    <span class="closed-label">MODAL BUTTON</span>
+    <span class="open-label">X</span>
+  </label>
+</div>
+</div>
+
+<!-- NAV LAYER //////////////////////////////// -->
+<div class="vp">
+  <div class="nav-layer-trigger"></div>
+  <div class="ur">
+    
+  </div>
+  <div class="nav-layer">
+    <div class="nl-top">
+      <svg viewbox="0 0 100 64">
+        <path 
+          d="M 50 10
+          L 100 50
+          Q 50 20 0 50
+        Z"/>
+      </svg>
+      <span>Introduction</span>
+    </div>
+    <div class="nl-right">
+      <span>
+        That way
+      </span>
+      <svg viewbox="0 0 64 100">
+        <path 
+          d="M 54 50
+          L 18 100
+          Q 44 50 18 0
+        Z"/>
+      </svg>
+    </div>
+    <div class="nl-bottom">
+        <span>Next</span>
+        <svg viewbox="0 0 100 64">
+          <path 
+            d="M 50 54
+            L 100 18
+            Q 50 44 0 18
+          Z"/>
+        </svg>
+    </div>
+    <div class="nl-left">
+      <svg viewbox="0 0 64 100">
+        <path 
+          d="M 10 50
+          L 50 100
+          Q 20 50 50 0
+        Z"/>
+      </svg>
+      <span>
+        This way
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE LOADING SCREEN /////////////////// -->
+<div id="page-loading-screen">
+  <svg class="page-loader-graphic" viewbox="0 0 100 100">
+    <path fill="transparent" stroke="white" stroke-width="10"  d="
+      M 50 10
+      L 90 90
+      L 10 90
+    Z"/>
+  </svg>
+  <span>Loading...</span>
+  <svg class="page-loader-graphic" viewbox="0 0 100 100">
+    <path fill="transparent" stroke="white" stroke-width="10"  d="
+      M 50 90
+      L 90 10
+      L 10 10
+    Z"/>
+  </svg>
+</div>

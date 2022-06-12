@@ -1,0 +1,65 @@
+/* LAYERS ///////////////////////////////////////////// */
+/* GENERAL -------------------------------------------- */
+.layer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.layer-background {
+  position: absolute;
+}
+
+/* PAGE LOADING SCREEN ------------------------------ */
+#page-loading-screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* PAGE BACKGROUND -------------------------------------------- */
+#page-background {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+}
+
+.gutter {
+  position: absolute;
+  width: calc(var(--gw) * 1px);
+  height: calc(var(--gh) * 1px);
+}
+
+.vg {
+  display: var(--vg);
+}
+
+.hg {
+  display: var(--hg);
+}
+
+.gutter-top {
+  top: 0;
+}
+
+.gutter-right {
+  right: 0;
+}
+
+.gutter-bottom {
+  bottom: 0;
+}
+
+.gutter-left {
+  left: 0;
+}
+
+/* MENU ------------------------------------ */
+#menu-layer {
+  z-index: 3;
+}

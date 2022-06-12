@@ -8,7 +8,7 @@
   <!-- MOBILE-SPECIFIC //////////////////////////////////// -->
   <!-- Always place second! -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="" />
+  <meta name="theme-color" content="black" />
 
   <!-- SEARCH ENGINE ////////////////////////////////////// -->
   <!-- Description should be 160 characters or less -->
@@ -27,7 +27,8 @@
 
   <!-- CSS //////////////////////////////////////////// -->
   <script src="basicLayout.js"></script>
-  <link rel="stylesheet" type="text/css" href="./splash.css" />
+  <link rel="stylesheet" type="text/css" href="./geometry/geometry.css" />
+  <link rel="stylesheet" type="text/css" href="./geometry/geometry-portrait.css" />
 
   <!-- GOOGLE FONTS ///////////////// -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,20 +40,15 @@
 
 <div id="page-loading-screen">
   <svg class="page-loading-graphic" viewbox="0 0 100 100">
-    <path fill="transparent" stroke="white" stroke-width="10"  d="
-      M 50 10
-      L 90 90
-      L 10 90
+    <path fill="transparent" stroke="black" stroke-width="4"  d="
+      M 4 50
+      L 50 4
+      L 96 50
+      L 50 96
     Z"/>
+    <circle cx="50" cy="50" r="32" fill="transparent" stroke="hsl(0, 100%, 0%)" stroke-width="4" />
   </svg>
   <span>Loading...</span>
-  <svg class="page-loading-graphic" viewbox="0 0 100 100">
-    <path fill="transparent" stroke="white" stroke-width="10"  d="
-      M 50 90
-      L 90 10
-      L 10 10
-    Z"/>
-  </svg>
 </div>
 
 <div id="page-background">
@@ -65,17 +61,18 @@
 <header id="title" class="layer">
   <div class="vp">
     <div class="ur">
+
       <div class="layer-background">
         <svg viewbox="0 0 100 120" preserveAspectRatio="none">
-          <rect fill="pink" x="0" y="0" width="100" height="40"/>
-          <rect fill="salmon" x="0" y="40" width="100" height="40"/>
-          <rect fill="brown" x="0" y="80" width="100" height="40"/>
+
         </svg>
         <a href="#title" class="content-layer-link" data-layer="#title">HEADER LAYER</a>
       </div>
+
       <div class="layer-content">
-        <h1>SPLASH</h1>
+        <h1>GEOMETRY</h1>
       </div>
+
     </div>
   </div>
 </header>
@@ -118,7 +115,7 @@
   </div>
 </article>
 
-<nav id="table-of-contents" class="layer">
+<main id="animations" class="layer">
   <div class="vp">
     <div class="ur">
 
@@ -126,7 +123,7 @@
         <svg viewbox="0 0 100 100" preserveAspectRatio="none">
           <rect fill="green" x="0" y="0" width="100" height="100" />
         </svg>
-        <a href="#table-of-contents" class="content-layer-link" data-layer="#table-of-contents"></a>
+        <a href="#animations" class="content-layer-link" data-layer="#animations"></a>
       </div>
 
       <div class="layer-content">
@@ -135,28 +132,10 @@
 
     </div>
   </div>
-</nav>
+</main>
 
-<footer id="about" class="layer">
-  <div class="vp">
-    <div class="ur">
-
-      <div class="layer-background">
-        <svg viewbox="0 0 100 100" preserveAspectRatio="none">
-          <rect fill="aqua" x="0" y="0" width="100" height="100" />
-        </svg>
-        <a href="#about" class="content-layer-link" data-layer="#about">ABOUT</a>
-      </div>
-
-      <div class="layer-content">
-        <h1>ABOUT THINGS</h1>
-      </div>
-    </div>
-
-  </div>
-</footer>
 
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-<script src="layers.js"></script>
+<script src="./geometry/geometry.js"></script>
 </html>

@@ -108,7 +108,6 @@ body {
   scroll-snap-align: start;
   /* This allows us to use rows properly as otherwise
   these divs will shrink down. */
-  background-color: black;
   flex: none;
 }
 
@@ -116,7 +115,6 @@ body {
   position: relative;
   width: calc(var(--w) * 1px);
   height: calc(var(--h) * 1px);
-  background-color: white;
   pointer-events: none;
 }
 

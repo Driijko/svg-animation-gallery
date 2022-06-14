@@ -1,2 +1,15 @@
 @media only screen and (orientation: portrait) {
+/* GENERAL ///////////////////////////////////// */
+:root {
+  --l: calc(var(--wpx)/300);
+}
+
+/* LAYERS ////////////////////////////////////// */
+/* TITLE ----------------------------------------- */
+#title h2 {
+   font-size: calc(var(--wpx)/9);
+   top: 36%;
+   text-align: center;
+   width: 100%;
+}
 }
